@@ -1,0 +1,25 @@
+dotnet tool install --global dotnet-ef
+
+Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 3.0.0
+Install-Package Microsoft.EntityFrameworkCore.Design -Version 3.0.0
+Install-Package Microsoft.EntityFrameworkCore.Tools -Version 3.0.0
+Install-Package Microsoft.AspNetCore.Cors
+
+//Restart visual studio or vs code IDE
+
+dotnet ef database drop
+dotnet ef migrations add InitCreate
+dotnet ef database update
+
+
+//Documentation
+//https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.0
+//https://www.entityframeworktutorial.net/efcore/entity-framework-core-console-application.aspx
+//https://stackoverflow.com/questions/49676508/getentitytypes-configure-entity-properties-using-the-generic-version-of-proper
+//https://code-maze.com/migrations-and-seed-data-efcore/
+//Db first
+//The following example scaffolds all schemas and tables and puts the new files in the Models folder.
+dotnet ef dbcontext scaffold "Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+//The following example scaffolds only selected tables and creates the context in a separate folder with a specified name:
+dotnet ef dbcontext scaffold "Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -t Blog -t Post --context-dir Context -c BlogContext
