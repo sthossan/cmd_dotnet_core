@@ -5,6 +5,9 @@ Install-Package Microsoft.EntityFrameworkCore.Design -Version 3.0.0
 Install-Package Microsoft.EntityFrameworkCore.Tools -Version 3.0.0
 Install-Package Microsoft.AspNetCore.Cors
 
+// services.AddControllers().AddNewtonsoftJson();
+Install-Package Microsoft.AspNetCore.Mvc.NewtonsoftJson
+
 //Restart visual studio or vs code IDE
 
 dotnet ef database drop
