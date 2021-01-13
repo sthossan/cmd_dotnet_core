@@ -5,6 +5,11 @@ Install-Package Microsoft.EntityFrameworkCore.Design -Version 3.0.0
 Install-Package Microsoft.EntityFrameworkCore.Tools -Version 3.0.0
 Install-Package Microsoft.AspNetCore.Cors
 
+Install-Package Microsoft.Data.Sqlite.Core -Version 5.0.2
+Install-Package MySqlConnector -Version 1.2.1
+Install-Package Npgsql -Version 5.0.1.1
+
+
 // services.AddControllers().AddNewtonsoftJson();
 Install-Package Microsoft.AspNetCore.Mvc.NewtonsoftJson
 
